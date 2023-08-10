@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <link
+      rel="stylesheet"
+      media="screen and (max-width: 767px)"
+      href="/css/mobile/index.css"
+    />
+    <link
+      rel="stylesheet"
+      media="screen and (min-width: 768px) and (max-width: 1024px)"
+      href="/css/tablet/index.css"
+    />
+    <link
+      rel="stylesheet"
+      media="screen and (min-width: 1025px)"
+      href="/css/pc/index.css"
+    />
+    <script src="https://kit.fontawesome.com/978d3e2caa.js"></script>
+  </head>
+  <body>
+    <div class="overlay"></div>
+    <section id="navArea">
+      <div class="navLinks">
+        <div class="logo"></div>
+        <div class="slogan">Find The Best Eat The Best</div>
+        <div class="searchIcon">
+          <div class="icon"><i class="fa-solid fa-magnifying-glass"></i></div>
+          <div class="searchOption">
+            <div class="btn getLocation">Your Location</div>
+            <table cellspacing="0">
+              <caption>
+                Select Location
+              </caption>
+              <tr>
+                <th>District</th>
+                <th>Thana</th>
+                <th>Village</th>
+              </tr>
+              <tr>
+                <td><input type="text" class="disInput" /></td>
+                <td><input type="text" class="thanaInput" /></td>
+                <td><input type="text" class="villInput" /></td>
+              </tr>
+              <tr>
+                <td colspan="3">
+                  <div class="btn">Search</div>
+                </td>
+              </tr>
+              <tr>
+                <td colspan="3">
+                  <div class="errorSms"></div>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <div class="account">
+          <div class="icon"><i class="fa-solid fa-user"></i></div>
+          <div class="accountInfo" data-is-loggedIn="FALSE">
+            <div class="loggedIn" style="display: none">
+              <div>logged in</div>
+            </div>
+            <div class="notLoggedIn" style="display: none">
+              <div class="logIn">
+                <div class="text">
+                  If You Have Already Sign Up You Can Login.
+                </div>
+                <div class="btn">Log In</div>
+              </div>
+              <div class="signUp">
+                <div class="text">
+                  If You Want To Add Your Restaurant Or Give Rating Or Give
+                  FeedBack You Need To Sign Up.
+                </div>
+                <div class="btn">Sign Up</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script src="/js/index.js"></script>
+  </body>
+</html>

@@ -1,0 +1,242 @@
+/* mobile */
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Dosis:wght@200;300;400;700;800&family=Lobster&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --main-color: #512da8;
+  --text-color: #888888;
+  --btn-color: #ffd700;
+  --highlight-color: #a6a6d2;
+  --curly-font: "Dancing Script", cursive;
+  --slogan-text-count: 3;
+  --btn-font: "Lobster", cursive;
+  --text-font: "Dosis", sans-serif;
+}
+body {
+  position: relative;
+}
+.overlay {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(55, 55, 56, 0.5);
+  background-image: url(/pics/navArea/loading.gif);
+  background-repeat: no-repeat;
+  background-position: center center;
+  z-index: 999;
+}
+.navLinks {
+  width: 100vw;
+  height: 5rem;
+  background-color: var(--main-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.logo {
+  background-image: url(/pics/navArea/logo.jpg);
+  height: 3rem;
+  width: 3rem;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+.slogan {
+  font-family: var(--curly-font);
+  color: var(--text-color);
+}
+.anim {
+  animation-name: textSlide;
+  animation-duration: calc(var(--slogan-text-count) * 0.05s);
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-direction: alternate;
+  font-weight: bolder;
+  font-size: 1.3rem;
+}
+
+@keyframes textSlide {
+  0% {
+    color: var(--text-color);
+  }
+  100% {
+    color: var(--highlight-color);
+  }
+}
+.searchIcon {
+  position: relative;
+  transform-style: preserve-3d;
+  perspective: 1500px;
+}
+.searchIcon > .icon {
+  color: var(--text-color);
+  font-size: 1.5rem;
+  transition: color 0.5s linear;
+  -webkit-transition: color 0.5s linear;
+  -moz-transition: color 0.5s linear;
+  -ms-transition: color 0.5s linear;
+  -o-transition: color 0.5s linear;
+  cursor: pointer;
+}
+.searchIcon > .icon:hover {
+  color: var(--highlight-color);
+}
+.searchOption {
+  opacity: 0;
+  transform: rotateX(-90deg);
+  transform-origin: top center;
+  position: absolute;
+  top: 3.5rem;
+  right: -3rem;
+  width: 23.5rem;
+  height: 15rem;
+  padding: 0rem 0.5rem;
+  background-color: var(--main-color);
+  color: var(--text-color);
+  -webkit-transform: rotateX(-90deg);
+  -moz-transform: rotateX(-90deg);
+  -ms-transform: rotateX(-90deg);
+  -o-transform: rotateX(-90deg);
+  transition: opacity 0.3s linear, transform 0.5s linear;
+  -webkit-transition: opacity 0.3s linear, transform 0.5s linear;
+  -moz-transition: opacity 0.3s linear, transform 0.5s linear;
+  -ms-transition: opacity 0.3s linear, transform 0.5s linear;
+  -o-transition: opacity 0.3s linear, transform 0.5s linear;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+.searchOption input {
+  width: 100%;
+  background-color: var(--highlight-color);
+  color: var(--text-color);
+  padding: 0.5rem;
+  text-transform: capitalize;
+  font-weight: bold;
+  text-align: center;
+}
+.searchOption table {
+  margin: 0 auto;
+}
+.searchOption table td {
+  text-align: center;
+}
+.searchOption .errorSms {
+  color: var(--btn-color);
+  font-size: 1.3rem;
+}
+.searchOption > .btn {
+  width: fit-content;
+}
+.account {
+  position: relative;
+  transform-style: preserve-3d;
+  perspective: 1500px;
+}
+.account > .icon:hover {
+  color: var(--highlight-color);
+}
+.account > .icon {
+  cursor: pointer;
+  color: var(--text-color);
+  font-size: 1.5rem;
+  transition: color 0.5s linear;
+  -webkit-transition: color 0.5s linear;
+  -moz-transition: color 0.5s linear;
+  -ms-transition: color 0.5s linear;
+  -o-transition: color 0.5s linear;
+}
+
+.accountInfo {
+  position: absolute;
+  height: 20rem;
+  width: 15rem;
+  background-color: var(--main-color);
+  top: 3.4rem;
+  right: 0;
+  transform: rotateX(-90deg);
+  -webkit-transform: rotateX(-90deg);
+  -moz-transform: rotateX(-90deg);
+  -ms-transform: rotateX(-90deg);
+  -o-transform: rotateX(-90deg);
+  transform-origin: top center;
+  opacity: 0;
+  transition: opacity 0.3s linear, transform 0.5s linear;
+  -webkit-transition: opacity 0.3s linear, transform 0.5s linear;
+  -moz-transition: opacity 0.3s linear, transform 0.5s linear;
+  -ms-transition: opacity 0.3s linear, transform 0.5s linear;
+  -o-transition: opacity 0.3s linear, transform 0.5s linear;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  font-family: var(--text-font);
+  font-weight: 400;
+}
+.notLoggedIn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+}
+.logIn,
+.signUp {
+  color: var(--text-color);
+  border-bottom: 2px solid var(--highlight-color);
+  padding: 1rem 0;
+}
+.signUp {
+  border-bottom: none;
+}
+.logIn > .text,
+.signUp > .text {
+  line-height: 1.5;
+  transition: color 0.5s linear;
+  -webkit-transition: color 0.5s linear;
+  -moz-transition: color 0.5s linear;
+  -ms-transition: color 0.5s linear;
+  -o-transition: color 0.5s linear;
+}
+.logIn:hover > .text,
+.signUp:hover > .text {
+  color: var(--highlight-color);
+}
+
+.btn {
+  background-color: var(--btn-color);
+  border: 1px solid var(--highlight-color);
+  width: 5.5rem;
+  margin: 0.5rem auto 0.5rem auto;
+  padding: 0.5rem;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.5s linear;
+  -webkit-transition: background-color 0.5s linear;
+  -moz-transition: background-color 0.5s linear;
+  -ms-transition: background-color 0.5s linear;
+  -o-transition: background-color 0.5s linear;
+  font-weight: bolder;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  font-family: var(--btn-font);
+  word-spacing: 0.2rem;
+  letter-spacing: 0.2rem;
+  white-space: nowrap;
+}
+.btn:hover {
+  background-color: var(--highlight-color);
+  color: var(--btn-color);
+}
