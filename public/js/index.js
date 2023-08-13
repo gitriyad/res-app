@@ -92,6 +92,11 @@ let villInput = document.querySelector("input.villInput");
 locationBtn.addEventListener("click", () => {
   overlay.style.display = "flex";
   errorSms.innerText = "";
+  let options = {
+    enableHighAccuracy: true,
+    maximumAge: 3000, // Cache location for 30 seconds
+    timeout: 10000, // Maximum time to wait for location, in milliseconds
+  };
   if ("geolocation" in navigator) {
     navigator.geolocation.getCurrentPosition(
       (pos) => {
@@ -106,7 +111,7 @@ locationBtn.addEventListener("click", () => {
           errorSms.innerText = `Error: ${err.message}`;
         }
       },
-      { maximumAge: 1000 }
+      options
     );
   } else {
     errorSms.innerText = ``;
@@ -119,6 +124,7 @@ async function getAndSetPlace(lat, lon) {
     let res = await fetch(url);
     if (res.ok) {
       let data = await res.json();
+      console.log("loc", data);
       let dataArr = data.display_name.split(",");
       let vill = dataArr[0].trim();
       let thana = dataArr[1].trim();
@@ -150,4 +156,5 @@ searchIcon.addEventListener("click", (e) => {
     searchOptionDiv.style.transform = "rotateX(-90deg)";
   }
 });
+
 sloganAnimation();
