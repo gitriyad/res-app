@@ -94,8 +94,7 @@ locationBtn.addEventListener("click", () => {
   errorSms.innerText = "";
   let options = {
     enableHighAccuracy: true,
-    maximumAge: 3000, // Cache location for 30 seconds
-    timeout: 10000, // Maximum time to wait for location, in milliseconds
+    maximumAge: 3000, // Cache location for 30 seconds // Maximum time to wait for location, in milliseconds
   };
   if ("geolocation" in navigator) {
     navigator.geolocation.getCurrentPosition(
